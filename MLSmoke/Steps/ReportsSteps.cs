@@ -62,6 +62,7 @@ namespace MLAutoFramework.Steps
             _driver.WaitForElementPresentAndEnabled(ReportsPage.Credit_Score_Radio_Btn, 60);
             _driver.FindElement(ReportsPage.Credit_Score_Radio_Btn).Click();
             _driver.WaitForPageLoad();
+            //
             test.Log(Status.Info, "User selected Pre-built Credit Score reports" + _driver.Title);
         }
 
@@ -320,7 +321,6 @@ namespace MLAutoFramework.Steps
         {
             WindowHelper.switchToChildWindow(_driver);
             _driver.WaitForPageLoad();
-            //_driver.SwitchTo().Frame(ReportsPage.frame1);
             WebDriverExtension.ScrollTo(_driver);
             _driver.SwitchTo().Frame(ReportsPage.frame1);
             IList<IWebElement> creditScores = _driver.FindElements(ReportsPage.Nobr_Tags);
